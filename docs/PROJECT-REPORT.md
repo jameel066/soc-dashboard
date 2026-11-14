@@ -26,8 +26,8 @@ statistics, charts, alerts, search and per-event detail to the analyst.
 
 The captured demonstration dataset contains **51 events**, of which **27** were
 flagged as alerts (**17 CRITICAL**). Validation covered 15 functional test cases,
-all of which passed, plus **18 automated unit tests** covering parsing, redirect
-validation, CSRF enforcement and the login flow.
+all of which passed, plus **19 automated unit tests** covering parsing, redirect
+validation, CSRF enforcement, the login flow and schema recovery.
 
 Before publication the code was reviewed as an attacker would review it. Eight
 findings were confirmed and fixed — among them a shipped default password, a
@@ -382,8 +382,9 @@ python -m unittest discover -s tests -v
 | CSRF | `POST` without a token returns 400 |
 | Authentication | Wrong password rejected, correct password redirects, protected routes redirect, login page contains no default credentials |
 | Open redirect | `?next=https://evil.example/` lands on the dashboard, not the attacker host |
+| Schema recovery | A database that loses its tables is recreated on the next request instead of returning 500 |
 
-**Result: 18 tests, all passing** on Python 3.9 and 3.12 via GitHub Actions.
+**Result: 19 tests, all passing** on Python 3.9 and 3.12 via GitHub Actions.
 
 ### 9.3 Dataset
 

@@ -182,9 +182,9 @@ lockout, and no protection against a local administrator.
 python -m unittest discover -s tests -v
 ```
 
-18 tests cover log parsing (CSV, free text, malformed input), redirect
-validation, CSRF rejection, the login flow and route protection. CI runs them on
-Windows for Python 3.9 and 3.12.
+19 tests cover log parsing (CSV, free text, malformed input), redirect
+validation, CSRF rejection, the login flow, route protection and schema
+recovery. CI runs them on Windows for Python 3.9 and 3.12.
 
 ---
 

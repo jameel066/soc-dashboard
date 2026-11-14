@@ -274,6 +274,24 @@ def init_db():
         conn.close()
 
 
+_schema_ready = False
+
+
+@app.before_request
+def ensure_schema():
+    """Create and seed the schema once per process, before the first request.
+
+    ``python dashboard.py`` calls :func:`init_db` directly. This hook covers the
+    other entry points — ``flask run``, a WSGI server, or a database file that
+    disappeared while the process was alive — so the first request cannot fail
+    with ``no such table: logs``.
+    """
+    global _schema_ready
+    if not _schema_ready:
+        init_db()
+        _schema_ready = True
+
+
 def get_setting(key, default=None):
     db = get_db()
     row = db.execute("SELECT value FROM settings WHERE key = ?", (key,)).fetchone()

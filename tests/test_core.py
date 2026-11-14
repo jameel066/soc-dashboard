@@ -163,6 +163,28 @@ class AuthFlowTests(unittest.TestCase):
         self.assertNotIn("admin123", body)
         self.assertNotIn("Default demo credentials", body)
 
+    def test_schema_is_recreated_when_missing(self):
+        """A database that loses its tables must not turn into a 500 loop."""
+        import sqlite3
+
+        con = sqlite3.connect(os.environ["SOC_DATABASE"])
+        con.execute("DROP TABLE IF EXISTS logs")
+        con.commit()
+        con.close()
+        dashboard._schema_ready = False
+
+        token = self._csrf_from_login_page()
+        self.client.post(
+            "/login",
+            data={
+                "username": "admin",
+                "password": "TestAdmin!2026",
+                "csrf_token": token,
+            },
+        )
+        response = self.client.get("/api/dashboard")
+        self.assertEqual(response.status_code, 200)
+
 
 if __name__ == "__main__":
     unittest.main()
