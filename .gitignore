@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Application state — never commit a populated database or signing key
+*.db
+*.sqlite3
+.secret_key
+instance/
+
+# Logs (but keep the prepared lab samples)
+*.log
+!sample-logs/*.log
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Generated report artefacts
+docs/_print.html

@@ -1,0 +1,32 @@
+2026-09-01T09:00:02 Successful SSH login for labuser from 192.168.16.20 port 51514 ssh2
+2026-09-01T09:02:11 Failed password for invalid user admin from 10.10.14.23 port 40122 ssh2
+2026-09-01T09:02:19 Failed password for invalid user root from 10.10.14.23 port 40130 ssh2
+2026-09-01T09:02:27 Failed password for invalid user oracle from 10.10.14.23 port 40144 ssh2
+2026-09-01T09:02:35 Failed password for invalid user postgres from 10.10.14.23 port 40158 ssh2
+2026-09-01T09:02:44 Failed password for invalid user ubuntu from 10.10.14.23 port 40172 ssh2
+2026-09-01T09:02:52 Failed password for invalid user test from 10.10.14.23 port 40186 ssh2
+2026-09-01T09:03:05 authentication failure for user backup from 10.10.14.23 port 40201 ssh2
+2026-09-01T09:05:12 Port scan detected from 192.168.56.77 to 10.10.20.5 port: 21
+2026-09-01T09:05:14 Port scan detected from 192.168.56.77 to 10.10.20.5 port: 22
+2026-09-01T09:05:15 Port scan detected from 192.168.56.77 to 10.10.20.5 port: 23
+2026-09-01T09:05:17 Port scan detected from 192.168.56.77 to 10.10.20.5 port: 80
+2026-09-01T09:05:18 Port scan detected from 192.168.56.77 to 10.10.20.5 port: 443
+2026-09-01T09:05:20 Port scan detected from 192.168.56.77 to 10.10.20.5 port: 445
+2026-09-01T09:05:22 Port scan detected from 192.168.56.77 to 10.10.20.5 port: 3389
+2026-09-01T09:05:25 Port scan detected from 192.168.56.77 to 10.10.20.5 port: 8080
+2026-09-01T09:08:44 Suricata alert: ET SCAN Nmap Scripting Engine from 172.16.4.90 to 10.10.20.9 port: 22
+2026-09-01T09:10:01 Firewall blocked connection from 203.0.113.44 to 10.10.20.5 port: 445
+2026-09-01T09:11:30 Malware signature matched on host 10.10.30.12
+2026-09-01T09:12:02 IDS alert: intrusion detected from 172.16.9.14 to 10.10.20.7
+2026-09-01T09:13:18 Command and control beacon observed from 10.10.40.31 to 198.51.100.7
+2026-09-01T09:15:00 Successful SSH login for labuser from 192.168.16.20 port 51602 ssh2
+2026-09-01T09:16:42 Generic log entry: scheduled backup completed on 10.10.20.5
+2026-09-01T12:00:00,10.10.14.23,10.10.20.5,Brute Force Attempt,CRITICAL,auth.log burst pattern confirmed
+2026-09-01T12:04:00,192.168.56.77,10.10.20.5,Port Scan Detected,HIGH,nmap -sS sweep
+2026-09-01T09:20:11 kernel: eth0 link down
+2026-09-01T09:21:03 Failed password for invalid user pi from 10.10.14.23 port 40310 ssh2
+2026-09-01T09:22:15 Suspicious connection to unusual outbound port from 10.10.40.31
+2026-09-01T09:24:47 Successful SSH login for labuser from 192.168.16.20 port 51640 ssh2
+
+this line is deliberately malformed and should be stored with default values
+<<<unterminated csv-looking line,still,not,valid
